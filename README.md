@@ -1,12 +1,12 @@
 # 商品系统
 
-商家管理
+物流
 
 
 ## 安装
 
 使用
-`composer require simple-shop/laravel-shop-store`
+`composer require simple-shop/laravel-shop-logistics`
 
 ## 配置
 

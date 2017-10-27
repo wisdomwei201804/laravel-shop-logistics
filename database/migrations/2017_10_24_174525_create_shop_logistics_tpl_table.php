@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateShopBrandTable extends Migration {
+class CreateShopLogisticsTplTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,9 +14,9 @@ class CreateShopBrandTable extends Migration {
 	{
 		Schema::create('shop_logistics_tpl', function(Blueprint $table)
 		{
-			$table->integer('id', true)->comment('主键');
-			$table->string('store_name', 32)->comment('商家名称');
-			$table->boolean('store_type')->nullable()->default(1)->comment('商家类型,1:自营,2:第三方');
+			$table->integer('id', true);
+			$table->char('name', 32)->nullable()->comment('模板名称');
+			$table->string('regexp', 512)->nullable()->comment('规则');
 			$table->timestamps();
 			$table->softDeletes()->comment('删除时间');
 		});

@@ -1,21 +1,28 @@
 <?php
-namespace SimpleShop\Store;
+/**
+ *------------------------------------------------------
+ * LogisticssServiceProvider.php
+ *------------------------------------------------------
+ *
+ * @author    qqiu@qq.com
+ * @version   V1.0
+ *
+ */
+
+namespace SimpleShop\Logistics;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Container\Container as Application;
 use Illuminate\Foundation\Application as LaravelApplication;
-use SimpleShop\Commodity\Search\RepositoryInterface;
-use SimpleShop\Commodity\Search\SearchRepository;
 
-class StoreServiceProvider extends ServiceProvider {
-
+class LogisticssServiceProvider extends ServiceProvider
+{
 	/**
 	 * Indicates if loading of the provider is deferred.
 	 *
 	 * @var bool
 	 */
 	protected $defer = false;
-
 
 	/**
 	 * Boot the service provider.
@@ -56,8 +63,6 @@ class StoreServiceProvider extends ServiceProvider {
 		}
 	}
 
-
-
 	/**
 	 * Register the service provider.
 	 *
@@ -65,7 +70,6 @@ class StoreServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-
 		$this->registerSearch();
 	}
 
@@ -81,6 +85,7 @@ class StoreServiceProvider extends ServiceProvider {
 
 	protected function registerSearch()
     {
-        $this->app->singleton(RepositoryInterface::class, SearchRepository::class);
+        //
     }
+
 }

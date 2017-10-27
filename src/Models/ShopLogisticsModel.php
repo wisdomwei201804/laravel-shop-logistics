@@ -1,22 +1,29 @@
 <?php
 /**
  *------------------------------------------------------
- * ShopBrandModel.php
+ * ShopLogisticsModel.php
  *------------------------------------------------------
  *
- * @author    wangzd
+ * @author    qqiu@qq.com
  * @version   V1.0
  *
  */
 
-namespace SimpleShop\Store\Models;
+namespace SimpleShop\Logistics\Models;
 
-class ShopStoreModel extends BaseModel
+use Illuminate\Database\Eloquent\Model;
+
+class ShopLogisticsModel extends Model
 {
+    /**
+     * 维护数据表中 created_at 和 updated_at 字段
+     */
+    public $timestamps = true;
+
     /**
      * 数据表名
      */
-    protected $table = "shop_store";
+    protected $table = "shop_logistics_tpl";
 
     /**
      * 主键
@@ -27,8 +34,8 @@ class ShopStoreModel extends BaseModel
      * 可以被集体附值的表的字段
      */
     protected $fillable = [
-        'store_name',
-        'store_type',
+        'name',
+        'regexp'
     ];
 
 }
